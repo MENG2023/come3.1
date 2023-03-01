@@ -1,0 +1,47 @@
+设计一个学校宿舍管理系统
+
+作业内容
+学校宿舍管理系统，要求包含宿舍信息，学生信息，每日的宿舍查房记录。
+
+参考答案(答题后可查看)
+-- 主要考虑学生与宿舍的关系：m:1，宿舍的查房记录是根据宿舍来查的，与宿舍有关系，一个宿舍可以多次查房，宿舍与查房记录是1:m的关系
+
+
+
+create table dormitory(
+
+id int primary key,
+
+  number varchar(20)
+
+);
+
+
+
+create table student(
+
+id int primary key,
+
+  name varchar(20),
+
+  dormitory_id int,
+
+  foreign key (dormitory_id) references dormitory(id)
+
+);
+
+
+
+create table info(
+
+id int primary key,
+
+  dormitory_id int,
+
+  status bit,
+
+  info_date timestamp,
+
+  foreign key (dormitory_id) references dormitory(id)
+
+);
