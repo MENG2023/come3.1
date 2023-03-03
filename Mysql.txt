@@ -1,0 +1,12 @@
+1. SQL中, 下列涉及空值的操作,不正确的是  ( B)
+
+A.name IS NULL
+B. name = NULL
+C.name IS NoT NULL
+D.NoT (name IS NULL)
+
+在SQL中，NULL是一种特有的数据类型，其等价于没有任何值、是未知数。
+NULL与0、空字符串、空格都不同。
+SQL默认情况下对WHERE XX!=NULL和WHERE XX=NULL的判断会永远返回0行，却不会提示语法错误。
+
+
